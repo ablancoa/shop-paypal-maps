@@ -4,6 +4,7 @@
   grid-row-gap: 1.5em;
   display: grid;
   padding: 0 0 4em 0;
+  min-height: 55vh;
 }
 
 .Checkout-item {
@@ -60,4 +61,12 @@
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .Checkout {
+    grid-template-columns: repeat(auto-fill, 350px);
+    justify-content: center;
+  }
+
 }

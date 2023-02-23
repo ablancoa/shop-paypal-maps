@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>PlatziShop Home</title>
+        <title>FakeMadrid-Store Home</title>
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@ablancoa' />
         <meta name='twitter:creator' content='@ablancoa' />

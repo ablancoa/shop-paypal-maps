@@ -10,7 +10,7 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
   const navigate = useNavigate()
 
   // creates a paypal order
-  const createOrder = (actions) => {
+  const createOrder = (data, actions) => {
 
     return actions.order
       .create({
@@ -65,7 +65,7 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
   }
 
   // check Approval
-  const onApprove = (actions) => {
+  const onApprove = (data, actions) => {
     return actions.order.capture().then(function (details) {
       const name = details.payer.name.given_name;
       console.log(`Nombre: ${name}: Orden ${orderID}`)
@@ -74,7 +74,7 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
   };
 
   //capture likely error
-  const onError = (actions) => {
+  const onError = (data, actions) => {
     return actions.order.capture().then(function (details) {
       const name = details.payer.name.given_name;
       console.log(details.payer)

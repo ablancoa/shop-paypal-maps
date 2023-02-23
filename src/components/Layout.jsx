@@ -8,8 +8,8 @@ export default function Layout() {
   return (
     <div className='Main'>
       <Header />
-      <Outlet />
-      <Footer />
+      <Outlet className='mainOutlet' />
+      <Footer className='Main-layout' />
     </div>
   )
 }

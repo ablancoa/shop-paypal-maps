@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { TYPES } from '../actions/shopping';
 import AppContext from '../context/AppContext';
 
 import '../styles/components/Success.css'
 
 export default function Success() {
-  const { state } = useContext(AppContext)
+  const { state, dispatch } = useContext(AppContext)
   const { buyer } = state;
+
+  useEffect(() => {
+    function deleteCart() {
+      (state.cart.length !== 0) && dispatch({ type: TYPES.CLEAR_CART })
+    }
+    deleteCart()
+  }, [dispatch, state.cart.length])
+
 
   return (
     <div className="Success">

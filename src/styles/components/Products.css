@@ -11,6 +11,7 @@
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
+  padding: 0.3rem;
 }
 
 .Products-item-info {
@@ -50,8 +51,17 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 300;
+  color: white;
 }
 
 .Products-item button:hover {
   background-color: rgba(39, 44, 49, 0.06);
+}
+
+@media (max-width: 640px) {
+  .Products-items {
+    grid-template-columns: repeat(auto-fill, 250px);
+    justify-content: center;
+  }
+
 }

@@ -44,3 +44,10 @@
 .Payment-button {
   margin-top: 1rem;
 }
+
+@media (max-width: 640px) {
+  .Payment {
+    flex-direction: column;
+  }
+
+}
