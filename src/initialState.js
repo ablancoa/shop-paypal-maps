@@ -1,4 +1,4 @@
-export default {
+const initialState = {
   cart: [],
   products: [
     {
@@ -45,3 +45,5 @@ export default {
     },
   ],
 };
+
+export default initialState;
