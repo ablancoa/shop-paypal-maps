@@ -6,7 +6,6 @@ import '../styles/components/Header.css';
 export default function Header() {
   const { state } = useContext(AppContext);
 
-  const { cart } = state;
   let total = 0;
   state.cart.map((item) => total = item.quantity + total)
 

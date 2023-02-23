@@ -5,13 +5,12 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const Paypal = ({ sumTotal, cart, buyer }) => {
   const [success, setSuccess] = useState(false)
-  const [ErrorMessage, setErrorMessage] = useState(false);
-  const [items, setItems] = useState([])
+  const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
   const navigate = useNavigate()
 
   // creates a paypal order
-  const createOrder = (data, actions) => {
+  const createOrder = (actions) => {
 
     return actions.order
       .create({
@@ -66,17 +65,22 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
   }
 
   // check Approval
-  const onApprove = (data, actions) => {
+  const onApprove = (actions) => {
     return actions.order.capture().then(function (details) {
       const name = details.payer.name.given_name;
-      console.log(details.payer)
+      console.log(`Nombre: ${name}: Orden ${orderID}`)
       setSuccess(true)
     });
   };
 
   //capture likely error
-  const onError = (data, actions) => {
-    setErrorMessage("An Error occured with your payment ");
+  const onError = (actions) => {
+    return actions.order.capture().then(function (details) {
+      const name = details.payer.name.given_name;
+      console.log(details.payer)
+      setErrorMessage(`${name}: Hubo un error en su pago`)
+    });
+
   };
 
   useEffect(() => {
@@ -84,9 +88,9 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
       navigate('/checkout/success')
     }
     if (ErrorMessage) {
-      alert('Hubo un error en el pago, intentelo mas tarde')
+      alert(ErrorMessage)
     }
-  }, [success])
+  }, [success, ErrorMessage, navigate])
 
   return (
     <PayPalScriptProvider options={{ "client-id": CLIENT_ID }}>
@@ -94,6 +98,7 @@ const Paypal = ({ sumTotal, cart, buyer }) => {
         style={{ layout: "vertical" }}
         createOrder={createOrder}
         onApprove={onApprove}
+        onError={onError}
       />
     </PayPalScriptProvider>
   );
