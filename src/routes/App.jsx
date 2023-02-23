@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import Home from '../containers/Home';
 import Checkout from '../containers/Checkout';
 import Payment from '../containers/Payment';
@@ -17,6 +18,7 @@ import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
   const initialState = useInitialState()
+  const helmetContext = {}
   const router = createBrowserRouter([
     {
       path: "/",
@@ -50,9 +52,11 @@ const App = () => {
 
 
   return (
-    <AppContext.Provider value={initialState}>
-      <RouterProvider router={router} />
-    </AppContext.Provider>
+    <HelmetProvider context={helmetContext}>
+      <AppContext.Provider value={initialState}>
+        <RouterProvider router={router} />
+      </AppContext.Provider>
+    </HelmetProvider>
   )
 }
 
