@@ -1,70 +1,80 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FakeMadrid-Store
 
-## Available Scripts
+Proyecto de simulación de un Ecommercen, creando un flujo de trabajo desde la seleccion de los porductos hasta el pago mediante PayPal
 
-In the project directory, you can run:
 
-### `npm start`
+## Autor
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [@ablancoa](https://www.github.com/ablancoa)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Implementaciones
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Obtencion de productos mediante Strapi, desplegada en Railway
+- Añadir productos al carrito
+- Gestion del carrito de productos 
+- Añadir informacion personal para envio
+- Añadida API de GoogleMaps para ubicacion
+- Añadido método de pago por PayPal
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Grupo de tecnologías
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Cliente:** 
+- React 18, 
+- react-router-dom,
+- Yup,
+- react-helmet-async,
+- react-google-maps/api,
+- axios,
+- dotenv,
+- @paypal/react-paypal-js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Servidor:** 
+- Node,
+- Strappi,
+- Firebase,
+- Railway
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Ejecutarlo localmente
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clona el proyecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  git clone https://github.com/ablancoa/shop-paypal-maps/
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ir al directorio
 
-## Learn More
+```bash
+  cd shop-paypal-maps/
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Instalar dependencias
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm install
+```
 
-### Code Splitting
+Iniciar el servidor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run start
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contribuir
 
-### Making a Progressive Web App
+Las contribuciones siempre son bien recividas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Soporte
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Para soporte, email ablancoa95@gmail.com.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Nota 
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Si el proyecto no logra cargar la informacion es debido a que el servidor en Railway esta en pausa debido a que vencen la cantidad de horas disponibles mensuales en el plan gratuito.
