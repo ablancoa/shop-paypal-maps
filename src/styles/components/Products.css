@@ -1,3 +1,7 @@
+.Products {
+  min-height: 55vh;
+}
+
 .Products-items {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;

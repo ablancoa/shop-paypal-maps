@@ -1,12 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Products from '../components/Products';
-import initialState from '../initialState'
+
 
 export default function Home() {
-
-
-
   return (
     <>
       <Helmet>
@@ -25,7 +22,7 @@ export default function Home() {
         <meta name='og:locale' content='es_ES' />
         <meta name='og:type' content='article' />
       </Helmet>
-      <Products products={initialState.products} />
+      <Products />
     </>
   )
 }

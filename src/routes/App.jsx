@@ -15,8 +15,8 @@ import AppContext from '../context/AppContext'
 import useInitialState from '../hooks/useInitialState';
 
 
-
 const App = () => {
+
   const initialState = useInitialState()
   const helmetContext = {}
   const router = createBrowserRouter([
@@ -27,7 +27,7 @@ const App = () => {
       children: [
         {
           path: "/",
-          element: (<Home />),
+          element: (<Home />)
         },
         {
           path: "checkout",
