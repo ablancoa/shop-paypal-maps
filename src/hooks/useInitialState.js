@@ -19,7 +19,7 @@ const useInitialState = () => {
       }
     }
     fetchData()
-  },[API])
+  })
 
   return {
     state,

@@ -15,7 +15,7 @@ export default function Product({ product, hanadleAddToCart }) {
       console.log(error)
     }
 
-  }, [product])
+  }, [product.image.data])
 
   return (
     <div className='Products-item'>
