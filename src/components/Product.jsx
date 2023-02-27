@@ -19,7 +19,7 @@ export default function Product({ product, hanadleAddToCart, local }) {
     else {
       setUrlProduct(product.image)
     }
-  }, [product.image])
+  }, [product.image, local])
 
   return (
     <div className='Products-item'>
