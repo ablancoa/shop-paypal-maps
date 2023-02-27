@@ -3,6 +3,11 @@
   justify-content: space-between;
 }
 
+.Header-title-container {
+  display: flex;
+  align-items: center;
+}
+
 .Header-checkout {
   display: flex;
   justify-content: space-evenly;

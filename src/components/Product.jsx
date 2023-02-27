@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Product({ product, hanadleAddToCart }) {
+export default function Product({ product, hanadleAddToCart, local }) {
   const [urlProduct, setUrlProduct] = useState("");
 
   useEffect(() => {
-    try {
-      const url = product.image.data[0].attributes.formats.small;
-      if (url) {
-        setUrlProduct(`https://backend-fakemadridstore-production.up.railway.app${url.url}`);
-      } else {
-        setUrlProduct(`https://backend-fakemadridstore-production.up.railway.app${product.image.data[0].attributes.url}`);
+    if (!local) {
+      try {
+        const url = product.image.data[0].attributes.formats.small;
+        if (url) {
+          setUrlProduct(`https://backend-fakemadridstore-production.up.railway.app${url.url}`);
+        } else {
+          setUrlProduct(`https://backend-fakemadridstore-production.up.railway.app${product.image.data[0].attributes.url}`);
+        }
+      } catch (error) {
+        console.log(error)
       }
-    } catch (error) {
-      console.log(error)
     }
-
-  }, [product.image.data])
+    else {
+      setUrlProduct(product.image)
+    }
+  }, [product.image])
 
   return (
     <div className='Products-item'>

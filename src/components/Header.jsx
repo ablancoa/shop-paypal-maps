@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../styles/components/Header.css';
+import logoIcon from '../assets/images/real_madrid_icon.png'
 
 export default function Header() {
   const { state } = useContext(AppContext);
@@ -11,11 +12,14 @@ export default function Header() {
 
   return (
     <div className='Header'>
-      <h1 className='Header-title'>
-        <Link to={`/`}>
-          FakeMadrid-Store
-        </Link>
-      </h1>
+      <div className='Header-title-container'>
+        <img src={logoIcon} alt='logo real madrid' width={35} height={35} />
+        <h1 className='Header-title'>
+          <Link to={`/`}>
+            FakeMadrid-Store
+          </Link>
+        </h1>
+      </div>
       <div className='Header-checkout'>
         <Link to={`/checkout`}>
           <i className="fa-solid fa-basket-shopping"></i>

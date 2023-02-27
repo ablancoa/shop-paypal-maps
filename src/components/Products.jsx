@@ -6,11 +6,12 @@ import { TYPES } from '../actions/shopping';
 import '../styles/components/Products.css'
 
 export default function Products() {
-  const { dispatch, products } = useContext(AppContext);
+  const { dispatch, products, local } = useContext(AppContext);
 
   const hanadleAddToCart = (product) => {
     dispatch({ type: TYPES.ADD_TO_CART, payload: [product, 1] })
   }
+
 
   return (
     <div className='Products'>
@@ -20,7 +21,11 @@ export default function Products() {
         ) : (
           <div className='Products-items'>
             {products.map((product) => (
-              <Product key={product.id} product={product.attributes} hanadleAddToCart={hanadleAddToCart} />
+              <Product key={product.id}
+                product={product.attributes || product}
+                hanadleAddToCart={hanadleAddToCart}
+                local={local}
+              />
             ))}
           </div>
         )}
